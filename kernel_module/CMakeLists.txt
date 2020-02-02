@@ -33,7 +33,7 @@ add_custom_target("${SELF_C}.target"
 
 add_custom_command(
   OUTPUT "${SELF_C}"
-  DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/${SELF}"
+  DEPENDS "${SELF}" "${ELF}"
   COMMAND xxd -i "${SELF}" "${SELF_C}"
   COMMENT "Converting ${SELF} to ${SELF_C}"
 )
